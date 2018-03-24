@@ -13,14 +13,14 @@ using namespace std;
 
 int main()
 {
-	while(true)
-	{
+//	while(true)
+//	{
 		theme1();
 		theme2();
 		theme3();
 		theme4();
 		theme5();
 		theme6();
-	}
+//	}
 }
 
