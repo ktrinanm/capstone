@@ -8,19 +8,38 @@
  *
  **/
 #include "themes.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-//	while(true)
-//	{
-		theme1();
-		theme2();
-		theme3();
-		theme4();
-		theme5();
-		theme6();
-//	}
+	if( wiringPiSPISetup( SPI_CHANNEL, SPI_SPEED ) == -1 )
+	{
+		cerr << "Could not initialize SPI." << endl;
+		return 1;
+	}
+
+	switch(stoi(argv[1]))
+	{
+		case 1:
+			theme1();
+			break;
+		case 2:
+			theme2();
+			break;
+		case 3:
+			theme3();
+			break;
+		case 4:
+			theme4();
+			break;
+		case 5:
+			theme5();
+			break;
+		default:
+			cerr << "Not a valid theme" << endl;
+	}
 }
 
